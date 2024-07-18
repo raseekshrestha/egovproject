@@ -20,7 +20,7 @@ const GaugeCard = ({ reservoir }) => {
                     <p>Current Level: {reservoir.currentLevel} Litre</p>
                     <p>
                         {(reservoir.currentLevel / reservoir.capacity) < 0.2 ?
-                            <div className='bg-orange-500 text-black'>Alert: water level low</div> :
+                            <div className='bg-orange-500 text-black'>water level low</div> :
                             <div className='invisible'>..</div>}
                     </p>
                 </div>

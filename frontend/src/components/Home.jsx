@@ -45,7 +45,7 @@ const Home = () => {
                 <h1 className='text-3xl dark:text-white font-extrabold text-center'>
                     National Reservoir level and Capacity Monitoring System
                 </h1>
-                <div className='grid grid-cols-4 gap-4 mt-5'>
+                <div className='grid grid-cols-2 md:grid-cols-4 gap-4 mt-5'>
                     {reservoirs.map(reservoir => (
                         <div>
                             <GaugeCard reservoir={reservoir} />
