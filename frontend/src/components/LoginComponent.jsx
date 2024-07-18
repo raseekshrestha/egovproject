@@ -7,7 +7,7 @@ import { alertState } from '../context/AlertContext';
 import RegisterComponent from './RegisterComponent';
 
 const LoginComponent = () => {
-    const { setOpenLoginModal, openLoginModal, setOpenRegisterModal, setIsLoggedIn, setUser, setToken } = authState();
+    const { setOpenLoginModal, openLoginModal, setOpenRegisterModal, setIsLoggedIn, setUser } = authState();
     const { setAlert } = alertState();
 
     const [creds, setCreds] = useState({ usernameOrEmail: "admin", password: "123" })
@@ -21,7 +21,6 @@ const LoginComponent = () => {
             const { data } = await axios.post(apiurl + "/api/users/login/", creds)
             setIsLoggedIn(true);
             setUser(data.user);
-            setToken(data.token)
 
             localStorage.setItem("user", JSON.stringify(data.user))
             localStorage.setItem("token", data.token)

@@ -1,20 +1,15 @@
 {
-  "name": "ecommerce",
+  "name": "egov",
   "version": "1.0.0",
   "description": "ecommerce backend using mongo node express",
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "node src/index.js",
-    "dev": "nodemon src/index.js",
+    "start": "node index.js",
+    "dev": "nodemon index.js",
     "test": "cross-env NODE_ENV=test mocha --exit"
   },
-  "keywords": [
-    "ecommerce",
-    "backend",
-    "ecommerce",
-    "backend"
-  ],
+  "keywords": [],
   "author": "raseek shrestha",
   "license": "ISC",
   "dependencies": {
