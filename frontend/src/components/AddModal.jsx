@@ -46,7 +46,7 @@ const AddComponent = () => {
     return (
         <>
             <div
-                onClick={() => setOpenAddModal(true)} className='bg-red-500 h-[50px] w-[50px] text-cyan-100 absolute bottom-5 right-5 rounded-full cursor-pointer'>
+                onClick={() => setOpenAddModal(true)} className='bg-red-500 h-[50px] w-[50px] text-cyan-100 sticky bottom-[20px] left-[85%] rounded-full cursor-pointer'>
                 <div className='relative'>
                     <FaPlus className='absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[50%] text-2xl' />
 
