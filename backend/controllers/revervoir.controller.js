@@ -43,7 +43,7 @@ const editReservoirStatus = asyncHandler(async (req, res) => {
 
 const deleteReservoir = asyncHandler(async (req, res) => {
     const reservoirId = req.params.reservoirId;
-    const del = await reservoirModel.deleteOne(reservoirId);
+    const del = await reservoirModel.deleteOne({ _id: reservoirId });
     res.json(new ApiResponse(200, "deleted success", del))
 })
 

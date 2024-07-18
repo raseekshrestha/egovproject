@@ -1,13 +1,29 @@
 import { Card } from 'flowbite-react'
 import React from 'react'
 import GaugeChart from 'react-gauge-chart'
+import { FaEdit } from "react-icons/fa";
+import { authState } from '../context/AuthContext';
+
 
 const GaugeCard = ({ reservoir }) => {
-    // alert(reservoir.currentLevel)
+    const { selectedReservour, setSelectedReservour } = authState()
+
+    const handleEdit = () => {
+        setSelectedReservour(reservoir)
+
+    }
     return (
+
         <>
             <Card className='dark:text-white'>
-                <h1 className='text-center dark:text-white text-2xl'>{reservoir.name} ({reservoir.location})</h1>
+                <h1 className='text-center dark:text-white text-2xl'>
+                    {reservoir.name} ({reservoir.location})  &nbsp;<sup>
+                        <FaEdit
+                            className='inline cursor-pointer text-blue-300'
+                            onClick={() => handleEdit(reservoir._id)}
+                        />
+                    </sup>
+                </h1>
                 <GaugeChart id={reservoir._id}
                     nrOfLevels={20}
                     colors={["#b21b0c", "#23ad49"]}

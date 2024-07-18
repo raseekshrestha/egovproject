@@ -5,6 +5,7 @@ import GaugeCard from './GaugeCard';
 import axios from 'axios';
 import apiurl from './apiurl';
 import AddModal from './AddModal'
+import EditComponent from './EditModal';
 
 
 const Home = () => {
@@ -14,6 +15,15 @@ const Home = () => {
             setOpenLoginModal(true)
         }
     }, [isLoggedIn])
+
+    useEffect(() => {
+        const intervalId = setInterval(() => {
+            fetchReservoir()
+        }, 10000)
+
+        return () => clearInterval(intervalId);
+
+    }, [])
 
     const [reservoirs, setReservoirs] = useState([])
 
@@ -59,6 +69,7 @@ const Home = () => {
 
                 </div>
                 <AddModal />
+                <EditComponent />
 
             </div>
         </>

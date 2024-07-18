@@ -10,7 +10,8 @@ const AuthContextProvider = ({ children }) => {
     const [openLoginModal, setOpenLoginModal] = useState(false);
     const [openRegisterModal, setOpenRegisterModal] = useState(false);
     const [openAddModal, setOpenAddModal] = useState(false);
-    const [refresh, setRefresh] = useState(Math.random())
+    const [refresh, setRefresh] = useState(Math.random());
+    const [selectedReservour, setSelectedReservour] = useState(null);
 
 
     const logout = () => {
@@ -55,7 +56,8 @@ const AuthContextProvider = ({ children }) => {
             openLoginModal, setOpenLoginModal,
             openRegisterModal, setOpenRegisterModal, logout,
             openAddModal, setOpenAddModal,
-            refresh, setRefresh
+            refresh, setRefresh,
+            selectedReservour, setSelectedReservour
 
         }}>
             {children}
