@@ -8,8 +8,7 @@ import AddModal from './AddModal'
 
 
 const Home = () => {
-    const { isLoggedIn, setOpenLoginModal, token } = authState();
-    const [refresh, setRefresh] = useState(Math.random())
+    const { isLoggedIn, setOpenLoginModal, refresh } = authState();
     useEffect(() => {
         if (!isLoggedIn) {
             setOpenLoginModal(true)
@@ -31,6 +30,7 @@ const Home = () => {
             setReservoirs(response.data.data)
         } catch (err) {
             console.log(err)
+            setReservoirs([])
         }
 
 
@@ -58,7 +58,7 @@ const Home = () => {
 
 
                 </div>
-                <AddModal setRefresh={setRefresh} />
+                <AddModal />
 
             </div>
         </>

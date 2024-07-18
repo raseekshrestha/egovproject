@@ -7,7 +7,7 @@ import { alertState } from '../context/AlertContext';
 import RegisterComponent from './RegisterComponent';
 
 const LoginComponent = () => {
-    const { setOpenLoginModal, openLoginModal, setOpenRegisterModal, setIsLoggedIn, setUser } = authState();
+    const { setOpenLoginModal, openLoginModal, setOpenRegisterModal, setIsLoggedIn, setUser, setRefresh } = authState();
     const { setAlert } = alertState();
 
     const [creds, setCreds] = useState({ usernameOrEmail: "admin", password: "123" })
@@ -27,7 +27,8 @@ const LoginComponent = () => {
 
             setAlert({ type: "success", message: String(data?.message) })
             setOpenLoginModal(false)
-            console.log(data)
+            // console.log(data)
+            setRefresh(Math.random())
 
         } catch (err) {
             console.log(err)

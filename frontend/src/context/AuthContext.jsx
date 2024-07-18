@@ -10,10 +10,14 @@ const AuthContextProvider = ({ children }) => {
     const [openLoginModal, setOpenLoginModal] = useState(false);
     const [openRegisterModal, setOpenRegisterModal] = useState(false);
     const [openAddModal, setOpenAddModal] = useState(false);
+    const [refresh, setRefresh] = useState(Math.random())
+
 
     const logout = () => {
         setIsLoggedIn(false);
         localStorage.removeItem("user")
+        localStorage.removeItem("token")
+        setRefresh(refresh + 1)
     }
 
     useEffect(() => {
@@ -50,7 +54,8 @@ const AuthContextProvider = ({ children }) => {
             user, setUser,
             openLoginModal, setOpenLoginModal,
             openRegisterModal, setOpenRegisterModal, logout,
-            openAddModal, setOpenAddModal
+            openAddModal, setOpenAddModal,
+            refresh, setRefresh
 
         }}>
             {children}

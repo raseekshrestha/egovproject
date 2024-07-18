@@ -7,8 +7,8 @@ import { alertState } from '../context/AlertContext';
 import { FaPlus } from "react-icons/fa";
 
 
-const AddComponent = ({ setRefresh }) => {
-    const { setOpenAddModal, openAddModal } = authState();
+const AddComponent = () => {
+    const { setOpenAddModal, openAddModal, setRefresh } = authState();
     const { setAlert } = alertState();
     const [payload, setPayload] = useState({})
 
