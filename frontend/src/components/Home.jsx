@@ -4,11 +4,12 @@ import { useEffect } from 'react';
 import GaugeCard from './GaugeCard';
 import axios from 'axios';
 import apiurl from './apiurl';
-
+import AddModal from './AddModal'
 
 
 const Home = () => {
     const { isLoggedIn, setOpenLoginModal, token } = authState();
+    const [refresh, setRefresh] = useState(Math.random())
     useEffect(() => {
         if (!isLoggedIn) {
             setOpenLoginModal(true)
@@ -25,12 +26,9 @@ const Home = () => {
                 "Content-Type": "application/json"
             }
         }
-        console.log(config)
         try {
             const response = await axios.get(`${apiurl}/api/reservoir`, config)
-            console.log(response)
             setReservoirs(response.data.data)
-            console.log(response.data.data)
         } catch (err) {
             console.log(err)
         }
@@ -39,7 +37,7 @@ const Home = () => {
     }
     useEffect(() => {
         fetchReservoir()
-    }, [])
+    }, [refresh])
 
     return (
         <>
@@ -60,6 +58,7 @@ const Home = () => {
 
 
                 </div>
+                <AddModal setRefresh={setRefresh} />
 
             </div>
         </>

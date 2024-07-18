@@ -9,7 +9,7 @@ const AuthContextProvider = ({ children }) => {
     const [user, setUser] = useState(null);
     const [openLoginModal, setOpenLoginModal] = useState(false);
     const [openRegisterModal, setOpenRegisterModal] = useState(false);
-    const [token, setToken] = useState(null);
+    const [openAddModal, setOpenAddModal] = useState(false);
 
     const logout = () => {
         setIsLoggedIn(false);
@@ -50,7 +50,8 @@ const AuthContextProvider = ({ children }) => {
             user, setUser,
             openLoginModal, setOpenLoginModal,
             openRegisterModal, setOpenRegisterModal, logout,
-            token
+            openAddModal, setOpenAddModal
+
         }}>
             {children}
         </AuthContext.Provider>

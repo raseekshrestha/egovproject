@@ -12,7 +12,7 @@ const CustomNavbar = () => {
     return (
         <Navbar fluid rounded className='bg-slate-300'>
             <Navbar.Brand href="https://flowbite-react.com">
-                <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">Awesome Blogger</span>
+                <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">NRLCMS</span>
             </Navbar.Brand>
             <div className="flex md:order-2">
                 {!isLoggedIn ?
